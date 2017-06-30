@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:gml="http://www.opengis.net/gml" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd" version="1.0.0">
+<ows:ServiceIdentification>
+<ows:Title>INESCTEC SOS - Alfredo Ramalho Buoy</ows:Title>
+<ows:Abstract/>
+<ows:Keywords>
+<ows:Keyword>SOS</ows:Keyword>
+<ows:Keyword>Weather</ows:Keyword>
+<ows:Keyword>Ocean Currents</ows:Keyword>
+<ows:Keyword>Salinity</ows:Keyword>
+<ows:Keyword>Waves</ows:Keyword>
+<ows:Keyword>Wind</ows:Keyword>
+</ows:Keywords>
+<ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+<ows:Fees>NONE</ows:Fees>
+<ows:AccessConstraints>NONE</ows:AccessConstraints>
+</ows:ServiceIdentification>
+<ows:ServiceProvider>
+<ows:ProviderName>
+Instituto de Engenharia de Sistemas e Computadores do Porto (INESCP)
+</ows:ProviderName>
+<ows:ProviderSite xlink:href="http://raia.inescporto.pt"/>
+<ows:ServiceContact>
+<ows:IndividualName>Artur Rocha</ows:IndividualName>
+<ows:PositionName>Researcher</ows:PositionName>
+<ows:ContactInfo>
+<ows:Address>
+<ows:ElectronicMailAddress>artur.rocha@inesctec.pt</ows:ElectronicMailAddress>
+</ows:Address>
+</ows:ContactInfo>
+</ows:ServiceContact>
+</ows:ServiceProvider>
+<ows:OperationsMetadata>
+<ows:Operation name="GetCapabilities">
+<ows:DCP>
+<ows:HTTP>
+<ows:Get xlink:href="http://raia.inescporto.pt/sos1/"/>
+<ows:Post xlink:href="http://raia.inescporto.pt/sos1/"/>
+</ows:HTTP>
+</ows:DCP>
+<ows:Parameter name="service">
+<ows:AllowedValues>
+<ows:Value>SOS</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="version">
+<ows:AllowedValues>
+<ows:Value>1.0.0</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+</ows:Operation>
+<ows:Operation name="GetObservation">
+<ows:DCP>
+<ows:HTTP>
+<ows:Get xlink:href="http://raia.inescporto.pt/sos1/"/>
+<ows:Post xlink:href="http://raia.inescporto.pt/sos1/"/>
+</ows:HTTP>
+</ows:DCP>
+<ows:Parameter name="offering">
+<ows:AllowedValues>
+<ows:Value>urn:observatorioraia:def:offering:::atmosphere</ows:Value>
+<ows:Value>urn:observatorioraia:def:offering:::oceanCurrent</ows:Value>
+<ows:Value>urn:observatorioraia:def:offering:::waterBody</ows:Value>
+<ows:Value>urn:observatorioraia:def:offering:::wave</ows:Value>
+<ows:Value>urn:observatorioraia:def:offering:::wind</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="observedProperty">
+<ows:AllowedValues>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::wind_speed_min
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::tmm10</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::air_temperature
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::wind_speed</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::wind_speed_max
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::do</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::chlorophyll_a</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::sea_water_temperature
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::mdir</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::hs</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::hm0</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::ocean_current</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::sprtp</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::thtp</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::wind_gust</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::tp</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::atmospheric_pressure
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::wind_speed_stddev
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::air_humidity</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::hmax</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::tm02</ows:Value>
+<ows:Value>urn:observatorioraia:def:phenomena:::thmax</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:phenomena:::wind_direction
+</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="eventTime">
+<ows:AnyValue/>
+<ows:DefaultValue>now</ows:DefaultValue>
+</ows:Parameter>
+</ows:Operation>
+<ows:Operation name="DescribeSensor">
+<ows:DCP>
+<ows:HTTP>
+<ows:Get xlink:href="http://raia.inescporto.pt/sos1/"/>
+<ows:Post xlink:href="http://raia.inescporto.pt/sos1/"/>
+</ows:HTTP>
+</ows:DCP>
+<ows:Parameter name="version">
+<ows:AllowedValues>
+<ows:Value>1.0.0</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="service">
+<ows:AllowedValues>
+<ows:Value>SOS</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="outputFormat">
+<ows:AllowedValues>
+<ows:Value>text/xml;subtype="sensorML/1.0.1"</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+<ows:Parameter name="SensorId">
+<ows:AllowedValues>
+<ows:Value>
+urn:observatorioraia:def:equipment:::wavesense:Fugro_Oceanor_Wavescan
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::adcp:rdi_workhorse_sentinel
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::thermohygrometer:vaisala_hmp45a
+</ows:Value>
+<ows:Value>urn:observatorioraia:def:equipment:::do:Royce_96A</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::anemometer:young_85106-19
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::barometer:vaisala_ptb330
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::thermometer:aanderaa_4060
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::thermometer:omega_905-44031
+</ows:Value>
+<ows:Value>
+urn:observatorioraia:def:equipment:::fluorometer:uniLux_chelsea
+</ows:Value>
+</ows:AllowedValues>
+</ows:Parameter>
+</ows:Operation>
+</ows:OperationsMetadata>
+<sos:Contents>
+<sos:ObservationOfferingList>
+<sos:ObservationOffering gml:id="Atmosphere">
+<gml:description>
+Muliparametric buoy-The colorless, odorless, tasteless mixture of gases that forms the space above and around the earth.
+</gml:description>
+<gml:name>urn:observatorioraia:def:offering:::atmosphere</gml:name>
+<gml:boundedBy>
+<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+</gml:Envelope>
+</gml:boundedBy>
+<sos:time>
+<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_Atmosphere">
+<gml:beginPosition>2010-05-22T23:00:00+00:00</gml:beginPosition>
+<gml:endPosition indeterminatePosition="now"/>
+</gml:TimePeriod>
+</sos:time>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::thermometer:omega_905-44031"/>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::thermohygrometer:vaisala_hmp45a"/>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::barometer:vaisala_ptb330"/>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::air_humidity">
+<swe:Phenomenon gml:id="Airhumidity_1">
+<gml:description>Air relative humidity</gml:description>
+<gml:name>Air humidity</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::atmospheric_pressure">
+<swe:Phenomenon gml:id="Atmosphericpressure_3">
+<gml:description>Air pressure description</gml:description>
+<gml:name>Atmospheric pressure</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::air_temperature">
+<swe:Phenomenon gml:id="Airtemperature_2">
+<gml:description>Air temperature description</gml:description>
+<gml:name>Air temperature</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:featureOfInterest xlink:href="OCEAN_RAIA_01"/>
+<sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+<sos:resultModel>ObservationCollection</sos:resultModel>
+<sos:responseMode>inline</sos:responseMode>
+</sos:ObservationOffering>
+<sos:ObservationOffering gml:id="OceanCurrent">
+<gml:description>
+Muliparametric buoy-Horizontal movement of water particles, considered generally as a time constant at the wave period scale, which direction and speed can change with the water depth.
+</gml:description>
+<gml:name>urn:observatorioraia:def:offering:::oceanCurrent</gml:name>
+<gml:boundedBy>
+<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+</gml:Envelope>
+</gml:boundedBy>
+<sos:time>
+<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_OceanCurrent">
+<gml:beginPosition>2010-05-22T23:00:00+00:00</gml:beginPosition>
+<gml:endPosition indeterminatePosition="now"/>
+</gml:TimePeriod>
+</sos:time>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::adcp:rdi_workhorse_sentinel"/>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::ocean_current">
+<swe:CompositePhenomenon gml:id="OceanCurrent_4" dimension="3">
+<gml:description>Ocean Current description</gml:description>
+<gml:name>Ocean Current</gml:name>
+<swe:component xlink:href="urn:observatorioraia:def:variable:::current_direction"/>
+<swe:component xlink:href="urn:observatorioraia:def:variable:::current_speed"/>
+<swe:component xlink:href="urn:observatorioraia:def:variable:::current_error"/>
+</swe:CompositePhenomenon>
+</sos:observedProperty>
+<sos:featureOfInterest xlink:href="OCEAN_RAIA_01"/>
+<sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+<sos:resultModel>ObservationCollection</sos:resultModel>
+<sos:responseMode>inline</sos:responseMode>
+</sos:ObservationOffering>
+<sos:ObservationOffering gml:id="WaterBody">
+<gml:description>
+Muliparametric buoy-The part of the earth's surface covered with water (such as a river or lake or ocean)
+</gml:description>
+<gml:name>urn:observatorioraia:def:offering:::waterBody</gml:name>
+<gml:boundedBy>
+<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+</gml:Envelope>
+</gml:boundedBy>
+<sos:time>
+<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_WaterBody">
+<gml:beginPosition>2010-05-22T23:00:00+00:00</gml:beginPosition>
+<gml:endPosition indeterminatePosition="now"/>
+</gml:TimePeriod>
+</sos:time>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::fluorometer:uniLux_chelsea"/>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::thermometer:aanderaa_4060"/>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::do:Royce_96A"/>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::do">
+<swe:Phenomenon gml:id="DissolvedOxygen_15">
+<gml:description>
+Amount of oxygen dissolved (and hence available to sustain marine life) in a body of water such as a lake, river, or stream.
+</gml:description>
+<gml:name>Dissolved Oxygen</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::chlorophyll_a">
+<swe:Phenomenon gml:id="ChlorophyllA_16">
+<gml:description>
+A type of chlorophyll that is most common and predominant in all oxygen-evolving photosynthetic organisms such as higher plants, red and green algae.
+</gml:description>
+<gml:name>Chlorophyll-A</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::sea_water_temperature">
+<swe:Phenomenon gml:id="Seawatertemperature_17">
+<gml:description>Sea Water temperature description</gml:description>
+<gml:name>Sea water temperature</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:featureOfInterest xlink:href="OCEAN_RAIA_01"/>
+<sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+<sos:resultModel>ObservationCollection</sos:resultModel>
+<sos:responseMode>inline</sos:responseMode>
+</sos:ObservationOffering>
+<sos:ObservationOffering gml:id="Wave">
+<gml:description>Muliparametric buoy-Waves are swell</gml:description>
+<gml:name>urn:observatorioraia:def:offering:::wave</gml:name>
+<gml:boundedBy>
+<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+</gml:Envelope>
+</gml:boundedBy>
+<sos:time>
+<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_Wave">
+<gml:beginPosition>2010-05-22T23:00:00+00:00</gml:beginPosition>
+<gml:endPosition indeterminatePosition="now"/>
+</gml:TimePeriod>
+</sos:time>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::wavesense:Fugro_Oceanor_Wavescan"/>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::tm02">
+<swe:Phenomenon gml:id="Meanperiod_12">
+<gml:description>Mean period definition</gml:description>
+<gml:name>Mean period</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::hm0">
+<swe:Phenomenon gml:id="Significantwaveheight_5">
+<gml:description>
+Four times the standard deviation of the surface elevation (or equivalently as four times the square root of the zero moment of the wave spectrum)
+</gml:description>
+<gml:name>Significant wave height</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::hs">
+<swe:Phenomenon gml:id="Significantwaveheightzeroupcrossing_7">
+<gml:description>
+Mean height of the highest 1/3 of the waves within a certain period
+</gml:description>
+<gml:name>Significant wave height (zero up-crossing)</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::thtp">
+<swe:Phenomenon gml:id="Meanwavedirectionatthepeakperiod_11">
+<gml:description>Mean wave direction at the peak period definition</gml:description>
+<gml:name>Mean wave direction at the peak period</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::tmm10">
+<swe:Phenomenon gml:id="Energyperiod_14">
+<gml:description>Energy period description</gml:description>
+<gml:name>Energy period</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::tp">
+<swe:Phenomenon gml:id="Peakperiod_13">
+<gml:description>
+Spectral peak wave period 1/fp where fp is the spectral Peak frequency. Also called Modal period.
+</gml:description>
+<gml:name>Peak period</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::sprtp">
+<swe:Phenomenon gml:id="Wavespreadingatpeakperiod_9">
+<gml:description>Wave spreading at peak period definition</gml:description>
+<gml:name>Wave spreading at peak period</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::mdir">
+<swe:Phenomenon gml:id="Meanwavedirection_8">
+<gml:description>Mean wave direction as a function of frequency</gml:description>
+<gml:name>Mean wave direction</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::thmax">
+<swe:Phenomenon gml:id="Periodofmaximumwaveheight_10">
+<gml:description>
+Duration between the zero-crossings which define the wave of maximum height. Zero downcrossing or zero upcrossing.
+</gml:description>
+<gml:name>Period of maximum wave height</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::hmax">
+<swe:Phenomenon gml:id="Maximumwaveheight_6">
+<gml:description>Maximum wave height definition</gml:description>
+<gml:name>Maximum wave height</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:featureOfInterest xlink:href="OCEAN_RAIA_01"/>
+<sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+<sos:resultModel>ObservationCollection</sos:resultModel>
+<sos:responseMode>inline</sos:responseMode>
+</sos:ObservationOffering>
+<sos:ObservationOffering gml:id="Wind">
+<gml:description>
+Muliparametric buoy-Wind is the perceptible natural movement of the air
+</gml:description>
+<gml:name>urn:observatorioraia:def:offering:::wind</gml:name>
+<gml:boundedBy>
+<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+</gml:Envelope>
+</gml:boundedBy>
+<sos:time>
+<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_Wind">
+<gml:beginPosition>2010-05-22T23:00:00+00:00</gml:beginPosition>
+<gml:endPosition indeterminatePosition="now"/>
+</gml:TimePeriod>
+</sos:time>
+<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::anemometer:young_85106-19"/>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::wind_gust">
+<swe:Phenomenon gml:id="Windspeedofgust_19">
+<gml:description>Wind gust description</gml:description>
+<gml:name>Wind speed of gust</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::wind_direction">
+<swe:Phenomenon gml:id="Winddirection_18">
+<gml:description>Wind direction description</gml:description>
+<gml:name>Wind direction</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::wind_speed">
+<swe:Phenomenon gml:id="Windspeed_20">
+<gml:description>Wind speed description</gml:description>
+<gml:name>Wind speed</gml:name>
+</swe:Phenomenon>
+</sos:observedProperty>
+<sos:featureOfInterest xlink:href="OCEAN_RAIA_01"/>
+<sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+<sos:resultModel>ObservationCollection</sos:resultModel>
+<sos:responseMode>inline</sos:responseMode>
+</sos:ObservationOffering>
+</sos:ObservationOfferingList>
+</sos:Contents>
+</sos:Capabilities>
