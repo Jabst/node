@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sos:Capabilities version="1.0.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
 	<ows:ServiceIdentification>
-		<ows:Title>Raspberry Pi3 - O2S0S</ows:Title>
+		<ows:Title>Raspberry Pi3 - C3PO</ows:Title>
 		<ows:Abstract/>
 		<ows:Keywords>
 			<ows:Keyword>Sensorthings</ows:Keyword>
@@ -33,7 +33,7 @@
 		<ows:Operation name="GetCapabilities">
 			<ows:DCP>
 				<ows:HTTP>
-					<ows:Get xlink:href="http://194.117.25.107:8080/sensorthings/v1.0"/>
+					<ows:Get xlink:href="http://194.117.25.150:8080/sensorthings/v1.0"/>
 				</ows:HTTP>
 			</ows:DCP>
 			<ows:Parameter name="service">
@@ -50,7 +50,7 @@
 		<ows:Operation name="GetObservation">
 			<ows:DCP>
 				<ows:HTTP>
-					<ows:Get xlink:href="http://194.117.25.107:8080/sensorthings/v1.0/Observations"/>
+					<ows:Get xlink:href="http://194.117.25.150:8080/sensorthings/v1.0/Observations"/>
 				</ows:HTTP>
 			</ows:DCP>
 			<ows:Parameter name="offering">
@@ -75,7 +75,7 @@
 		<ows:Operation name="DescribeSensor">
 			<ows:DCP>
 				<ows:HTTP>
-					<ows:Get xlink:href="http://194.117.25.107:8080/sensorthings/v1.0/Sensors"/>
+					<ows:Get xlink:href="194.117.25.150:8080/sensorthings/v1.0/Sensors"/>
 				</ows:HTTP>
 			</ows:DCP>
 			<ows:Parameter name="version">
@@ -119,24 +119,24 @@
 				</sos:time>
 				<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::senseHat"/>
 				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::temperature">
-					<swe:Phenomenon gml:id="Temperature_1">
+					<swe:Phenomenon gml:id="Temperature_c3po">
 						<gml:description>Temperature</gml:description>
 						<gml:name>Temperature</gml:name>
 					</swe:Phenomenon>
 				</sos:observedProperty>
 				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::atmosphericPressure">
-					<swe:Phenomenon gml:id="Atmosphericpressure_2">
+					<swe:Phenomenon gml:id="Atmosphericpressure_c3po">
 						<gml:description>Atmospheric pressure description</gml:description>
 						<gml:name>Atmospheric pressure</gml:name>
 					</swe:Phenomenon>
 				</sos:observedProperty>
 				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::humidity">
-					<swe:Phenomenon gml:id="Humidity_2">
+					<swe:Phenomenon gml:id="Humidity_c3po">
 						<gml:description>Humidity description</gml:description>
 						<gml:name>Humidity</gml:name>
 					</swe:Phenomenon>
 				</sos:observedProperty>
-				<sos:featureOfInterest xlink:href="CORAL_01"/>
+				<sos:featureOfInterest xlink:href="CORAL_02"/>
 				<sos:responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</sos:responseFormat>
 				<sos:resultModel>ObservationCollection</sos:resultModel>
 				<sos:responseMode>inline</sos:responseMode>
