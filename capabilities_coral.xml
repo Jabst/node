@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities version="1.0.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
+	<ows:ServiceIdentification>
+		<ows:Title>INESCTEC SOS - Alfredo Ramalho Buoy</ows:Title>
+		<ows:Abstract/>
+		<ows:Keywords>
+			<ows:Keyword>Sensorthings</ows:Keyword>
+			<ows:Keyword>Temperature</ows:Keyword>
+			<ows:Keyword>Humidity</ows:Keyword>
+			<ows:Keyword>Atmospheric Pressure</ows:Keyword>
+			<ows:Keyword>Coral</ows:Keyword>
+		</ows:Keywords>
+		<ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+		<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+		<ows:Fees>NONE</ows:Fees>
+		<ows:AccessConstraints>NONE</ows:AccessConstraints>
+	</ows:ServiceIdentification>
+	<ows:ServiceProvider>
+		<ows:ProviderName>Instituto de Engenharia de Sistemas e Computadores do Porto (INESCP)
+</ows:ProviderName>
+		<ows:ProviderSite xlink:href="http://coral-tools.inescporto.pt/html"/>
+		<ows:ServiceContact>
+			<ows:IndividualName>Alexandre Teixeira</ows:IndividualName>
+			<ows:PositionName>Developer</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Address>
+					<ows:ElectronicMailAddress>jast@inesctec.pt</ows:ElectronicMailAddress>
+				</ows:Address>
+			</ows:ContactInfo>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://coral-tools.inesctec.pt/sensorthings/v1.0"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="service">
+				<ows:AllowedValues>
+					<ows:Value>SOS</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="version">
+				<ows:AllowedValues>
+					<ows:Value>1.0.0</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Operation name="GetObservation">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://coral-tools.inesctec.pt/sensorthings/v1.0/Observations"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="offering">
+				<ows:AllowedValues>
+					<ows:Value>urn:observatorioraia:def:offering:::temperature</ows:Value>
+					<ows:Value>urn:observatorioraia:def:offering:::atmosphericPressure</ows:Value>
+					<ows:Value>urn:observatorioraia:def:offering:::humidity</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="observedProperty">
+				<ows:AllowedValues>
+					<ows:Value>urn:observatorioraia:def:phenomena:::temperature</ows:Value>
+					<ows:Value>urn:observatorioraia:def:phenomena:::atmosphericPressure</ows:Value>
+					<ows:Value>urn:observatorioraia:def:phenomena:::humidity</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="eventTime">
+				<ows:AnyValue/>
+				<ows:DefaultValue>now</ows:DefaultValue>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Operation name="DescribeSensor">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://coral-tools.inesctec.pt/sensorthings/v1.0/Sensors"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="version">
+				<ows:AllowedValues>
+					<ows:Value>1.0.0</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="service">
+				<ows:AllowedValues>
+					<ows:Value>SOS</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="outputFormat">
+				<ows:AllowedValues>
+					<ows:Value>text/xml;subtype=&quot;sensorML/1.0.1&quot;</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="SensorId">
+				<ows:AllowedValues>
+					<ows:Value>urn:observatorioraia:def:equipment:::senseHat</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+		</ows:Operation>
+	</ows:OperationsMetadata>
+	<sos:Contents>
+		<sos:ObservationOfferingList>
+			<sos:ObservationOffering gml:id="Temperature">
+				<gml:description>A temperature is an objective comparative measurement of hot or cold. It is measured by a thermometer. Several scales and units exist for measuring temperature, the most common being Celsius (denoted °C; formerly called centigrade), Fahrenheit (denoted °F), and, especially in science, Kelvin (denoted K).</gml:description>
+				<gml:name>Raspberry Pi3 - O2S0S</gml:name>
+				<gml:boundedBy>
+					<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+						<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
+						<gml:upperCorner>41.1634666667 -9.56066666667</gml:upperCorner>
+					</gml:Envelope>
+				</gml:boundedBy>
+				<sos:time>
+					<gml:TimePeriod gml:id="AVAILABLE_TIME_FOR_OFFERING_Temperature">
+						<gml:beginPosition>2017-07-03T23:00:00+00:00</gml:beginPosition>
+						<gml:endPosition indeterminatePosition="now"/>
+					</gml:TimePeriod>
+				</sos:time>
+				<sos:procedure xlink:href="urn:observatorioraia:def:equipment:::senseHat"/>
+				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::temperature">
+					<swe:Phenomenon gml:id="Temperature_1">
+						<gml:description>Temperature</gml:description>
+						<gml:name>Temperature</gml:name>
+					</swe:Phenomenon>
+				</sos:observedProperty>
+				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::atmosphericPressure">
+					<swe:Phenomenon gml:id="Atmosphericpressure_2">
+						<gml:description>Atmospheric pressure description</gml:description>
+						<gml:name>Atmospheric pressure</gml:name>
+					</swe:Phenomenon>
+				</sos:observedProperty>
+				<sos:observedProperty xlink:href="urn:observatorioraia:def:phenomena:::humidity">
+					<swe:Phenomenon gml:id="Humidity_2">
+						<gml:description>Humidity description</gml:description>
+						<gml:name>Humidity</gml:name>
+					</swe:Phenomenon>
+				</sos:observedProperty>
+				<sos:featureOfInterest xlink:href="CORAL_01"/>
+				<sos:responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</sos:responseFormat>
+				<sos:resultModel>ObservationCollection</sos:resultModel>
+				<sos:responseMode>inline</sos:responseMode>
+			</sos:ObservationOffering>
+		</sos:ObservationOfferingList>
+	</sos:Contents>
+</sos:Capabilities>
