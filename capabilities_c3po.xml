@@ -104,7 +104,7 @@
 		<sos:ObservationOfferingList>
 			<sos:ObservationOffering gml:id="Temperature">
 				<gml:description>A temperature is an objective comparative measurement of hot or cold. It is measured by a thermometer. Several scales and units exist for measuring temperature, the most common being Celsius (denoted °C; formerly called centigrade), Fahrenheit (denoted °F), and, especially in science, Kelvin (denoted K).</gml:description>
-				<gml:name>Raspberry Pi3 - O2S0S</gml:name>
+				<gml:name>Raspberry Pi3 - C3PO</gml:name>
 				<gml:boundedBy>
 					<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
 						<gml:lowerCorner>41.1634666667 -9.56066666667</gml:lowerCorner>
